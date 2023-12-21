@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>CSS priorities test</title>
+    <link rel="stylesheet" href="styles/style1.css" />
+    <style>
+        p {
+            padding: 10px;
+            background-color: #cfcfcf;
+            border: 1px solid #000000;
+        }
+
+        #specialPara {
+            border-left: 15px solid #080a0a;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <p>This is a demo para.</p>
+    <p style="background-color:#00ff00;color:#ffffff">
+        This is a demo para.
+    </p>
+    <p id="specialPara">This is a demo para.</p>
+    <p>This is a demo para.</p>
+    <p>This is a demo para.</p>
+</body>
+
+</html>

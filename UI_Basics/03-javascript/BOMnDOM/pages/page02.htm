@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript event handling</title>
+        <script src="../scripts/script02.js"></script>
+    </head>
+    <body>
+        <section style="width:50%;margin:auto;">
+            <form>
+                <div>
+                    <label for="fnm">Friend Name: </label>
+                    <input type="text" id="fnm" name="fnm" />
+                </div>
+                <div>
+                    <label for="mob">Mobile: </label>
+                    <input type="text" id="mob" name="mob" />
+                </div>
+                <button type="button" onclick="addFriend()">ADD</button>
+            </form>
+    
+            <h3>Friends List</h3>
+            <table id="friendsList" style="width:100%;border:1px solid #000000;">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Mobile</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                </tbody>
+            </table>
+        </section>
+        
+    </body>
+</html>
