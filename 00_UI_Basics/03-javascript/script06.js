@@ -12,6 +12,8 @@ const welcome = () => "Hai! You are welcome!";
 
 const welcomeUser = user => "Hello! "+user+" you are welcome";
 
+const simpleInterest = (p,t,r) => ((p*t*r)/100);
+
 const greetByTime = () => {
     let h = (new Date()).getHours();
     
@@ -24,11 +26,9 @@ const greetByTime = () => {
     return greeting;
 };
 
-const simpleInterest = (p,t,r) => ((p*t*r)/100);
-
 greet();
 greetUser("Vamsy");
 
 console.log(welcome());
 console.log(welcomeUser("Vamsy"));
-console.log(greetByTime())
+console.log(greetByTime());

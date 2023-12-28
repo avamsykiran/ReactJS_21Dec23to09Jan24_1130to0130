@@ -65,3 +65,4 @@ let p2 = pickPrimes(111,333,777);
 
 p2.then(priemsCount => console.log(`${priemsCount} primes found in second group`))
     .catch( err => console.log(err));
+    

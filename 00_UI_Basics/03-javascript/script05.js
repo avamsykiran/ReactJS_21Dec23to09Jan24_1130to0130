@@ -1,5 +1,5 @@
 
-let s = "Hello World";
+s = "Hello World";
 
 console.log(s.length)
 console.log(s.toUpperCase())
@@ -15,8 +15,8 @@ console.log(Math.floor(2.37))
 console.log(Math.ceil(2.67))
 console.log(Math.ceil(2.37))
 
-let today = new Date();
-let indepenceDay = new Date("1947-08-15");
+today = new Date();
+indepenceDay = new Date("1947-08-15");
 
 console.log(today);
 console.log(indepenceDay)

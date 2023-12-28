@@ -4,6 +4,12 @@ let c1 = {cid:101,name:'Vamsy',mobile:'9052224753',email:'vamsy@gmail.com',dob:n
 console.log("Hello "+c1.name+"! It is good to call you at "+c1.mobile);
 console.log(`Hello ${c1.name}! It is good to call you at ${c1.mobile}`);
 
+/*
+" double quote "
+' single quote '
+` back quote `
+*/
+
 //Destructured assignment
 
 //let name = c1.name;
