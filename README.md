@@ -180,8 +180,30 @@ ReactJS
                             <p>No friends found</p>
                         ) ;
                          
+    ReactJS Function Component
 
+        Any javascript function that returns an html-dom-element.
 
-        
+        const Banner = () => <h2>This is my web app title</h2>
 
+        <Banner></Banner>
+
+        1. no access to state
+        2. no access to the life cycle methods
+
+        Function Components are also called as state-less components.
+
+    Integrating Bootstrap with ReactJS
+
+        npm i bootstrap --save
+
+        import the bootstrap.css and bootstrap.js files into the index.js file.
+
+    ReactJs 'props'
+
+        'props' , shortcut for properties, is a predefined object of
+        values passed from a parent component to a child component 
+        through attributes.
+
+    
 

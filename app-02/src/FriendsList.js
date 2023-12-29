@@ -1,0 +1,61 @@
+import { Component } from 'react';
+import FriendsListHeader from './FriendsListHeader';
+import FriendsListItem from './FriendsListItem';
+
+class FriendsList extends Component {
+    constructor() {
+        super();
+        this.state = {
+            friends: [
+                { id: 101, fullName: "Vamsy Kiran", mobile: "9052224753", mail: "a.vamc.it@gmail.com" },
+                { id: 102, fullName: "Sagar Guru Charan", mobile: "9052224703", mail: "sagar@gmail.com" },
+                { id: 103, fullName: "Suseela", mobile: "9052024753", mail: "suseelarani@gmail.com" },
+                { id: 104, fullName: "Sarada Gowri", mobile: "9051224753", mail: "sarada@gmail.com" },
+                { id: 105, fullName: "Indhikaa Valli", mobile: "9052824753", mail: "indu@gmail.com" }
+            ],
+            nextId: 106
+        };
+    }
+
+    addFriend = friend => {
+        this.setState({
+            friends: [...this.state.friends, { ...friend, id: this.state.nextId }],
+            nextId: this.state.nextId + 1
+        });
+    }
+
+    deleteFriend = id => {
+        this.setState({ friends: this.state.friends.filter(f => f.id != id) });
+    }
+
+    updateFriend = friend => {
+        this.setState({
+            friends: this.state.friends.map(f => f.id == friend.id ? friend : f)
+        });
+    }
+
+    render() {
+
+        let { friends } = this.state;
+
+        return (
+            <div className='container-fluid p-4'>
+                <div className='col-sm-10 border border-secondary p-4 mx-auto'>
+                    <h3>Friends List</h3>
+
+                    <FriendsListHeader />
+
+                    {friends.length === 0 ?
+                        <p className='alert alert-info fw-bold'>
+                            No Friends To display
+                        </p> :
+                        friends.map(f => <FriendsListItem friend={f} />) 
+                    }
+                </div>
+
+            </div>
+        );
+    }
+}
+
+export default FriendsList;
