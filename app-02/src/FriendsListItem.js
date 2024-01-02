@@ -1,5 +1,5 @@
 
-const FriendsListItem = ({ friend }) => (
+const FriendsListItem = ({ friend,deleteFriend }) => (
     <div className="row border-bottom border-primary p-2">
         <div className="col-1 text-end">{friend.id}</div>
         <div className="col">{friend.fullName}</div>
@@ -7,7 +7,7 @@ const FriendsListItem = ({ friend }) => (
         <div className="col-3">{friend.mail}</div>
         <div className="col-2 text-center">
             <button className="btn btn-sm btn-secondary me-1" type="button">EDIT</button>
-            <button className="btn btn-sm btn-danger" type="button">DELETE</button>
+            <button className="btn btn-sm btn-danger" type="button" onClick={event => deleteFriend(friend.id) }>DELETE</button>
         </div>
     </div>
 );

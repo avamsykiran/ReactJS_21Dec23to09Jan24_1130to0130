@@ -205,5 +205,34 @@ ReactJS
         values passed from a parent component to a child component 
         through attributes.
 
-    
+    Shadow DOM / Virtual DOM
+
+        Shadow DOM is a temporary DOM tree copy created and maintained by the React Scripts.
+        Any render() will effect this shadow dom first and the final shadow dom is compared
+        with the actual DOM Tree of the browser and the changes are detected. Only the detected
+        changes are made on the DOM Tree to reduce the number of changes or complete regenertion of
+        the actual DOM. This results in better performence. An attribute called 'key' is used on  the
+        html elements to maintain a reference between records and html elements for the sake of
+        detecting changes.
+
+    ReactJS Forms
+
+        UnControlled Form Components 
+
+            Each 'input' element is linked with a 'ref' field of react.
+
+            These 'ref' fields will give the data entered in form when needed.
+
+            'ref' fields are very costly on the memory and they stay in the memory even if they are 
+            not being used anymore.
+
+            we do not recommend this approach.
+
+
+        Controlled Form Components
+
+            The state fields of the component are directly mapped to the 'input' element. Then the
+            'input' element becems readoly as the state is immutable. To modify the data
+            we have to handle 'onChange' event of the input element , receive the new-value
+            and make changes to the state through 'setState' method.
 

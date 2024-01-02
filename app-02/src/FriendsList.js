@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import FriendsListHeader from './FriendsListHeader';
 import FriendsListItem from './FriendsListItem';
+import FriendListFormItem from './FriendsListFormItem';
 
 class FriendsList extends Component {
     constructor() {
@@ -34,6 +35,18 @@ class FriendsList extends Component {
         });
     }
 
+    setEditable = id => {
+        this.setState({
+            friends: this.state.friends.map(f => f.id == id ? {...f,isEditable:true} : f)
+        });
+    }
+
+    unSetEditable = id => {
+        this.setState({
+            friends: this.state.friends.map(f => f.id == id ? {...f,isEditable:undefined} : f)
+        });
+    }
+
     render() {
 
         let { friends } = this.state;
@@ -45,14 +58,19 @@ class FriendsList extends Component {
 
                     <FriendsListHeader />
 
+                    <FriendListFormItem save={this.addFriend} />
+
                     {friends.length === 0 ?
                         <p className='alert alert-info fw-bold'>
                             No Friends To display
                         </p> :
-                        friends.map(f => <FriendsListItem friend={f} />) 
+                        friends.map(f => (
+                            f.isEditable ?
+                            <FriendListFormItem key={f.id} friend={f} /> :
+                            <FriendsListItem key={f.id} friend={f} deleteFriend={this.deleteFriend} />
+                        )) 
                     }
                 </div>
-
             </div>
         );
     }
