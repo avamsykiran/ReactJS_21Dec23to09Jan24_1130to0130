@@ -228,7 +228,6 @@ ReactJS
 
             we do not recommend this approach.
 
-
         Controlled Form Components
 
             The state fields of the component are directly mapped to the 'input' element. Then the
@@ -236,3 +235,13 @@ ReactJS
             we have to handle 'onChange' event of the input element , receive the new-value
             and make changes to the state through 'setState' method.
 
+    Assignement#1
+        Inventory Management
+            Item
+                id
+                name
+                stock
+                price
+                unit    (ltr/kg/gra/packet) (Use Drop down to select the unit)
+
+            Perform CRUD operation on thsi entity using a SPA.

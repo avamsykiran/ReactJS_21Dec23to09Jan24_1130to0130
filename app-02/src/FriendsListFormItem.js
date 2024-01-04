@@ -3,7 +3,7 @@ import { Component } from 'react';
 class FriendListFormItem extends Component {
     constructor(props) {
         super(props);
-        this.state = this.initData();
+        this.state = props.friend?{...props.friend} : this.initData();
     }
 
     initData = () => ({
@@ -19,7 +19,11 @@ class FriendListFormItem extends Component {
         this.setState(this.initData());
     };
 
-    cancelBtnClicked = event => this.setState(this.initData())
+    cancelBtnClicked = event => { 
+        this.state.isEditable ? 
+            this.props.cancel(this.state.id) : 
+            this.setState(this.initData());
+    }
 
     render() {
 

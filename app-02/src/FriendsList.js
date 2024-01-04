@@ -31,7 +31,7 @@ class FriendsList extends Component {
 
     updateFriend = friend => {
         this.setState({
-            friends: this.state.friends.map(f => f.id == friend.id ? friend : f)
+            friends: this.state.friends.map(f => f.id == friend.id ? {...friend,isEditable:undefined} : f)
         });
     }
 
@@ -66,8 +66,16 @@ class FriendsList extends Component {
                         </p> :
                         friends.map(f => (
                             f.isEditable ?
-                            <FriendListFormItem key={f.id} friend={f} /> :
-                            <FriendsListItem key={f.id} friend={f} deleteFriend={this.deleteFriend} />
+                            <FriendListFormItem 
+                                key={f.id} 
+                                friend={f}
+                                save={this.updateFriend}
+                                cancel={this.unSetEditable} /> :
+                            <FriendsListItem 
+                                key={f.id} 
+                                friend={f} 
+                                deleteFriend={this.deleteFriend} 
+                                setEditable={this.setEditable} />
                         )) 
                     }
                 </div>
