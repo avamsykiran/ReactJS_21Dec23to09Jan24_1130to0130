@@ -5,6 +5,7 @@ const FriendsListItem = ({ friend, deleteFriend, setEditable }) => (
         <div className="col">{friend.fullName}</div>
         <div className="col-2 text-center">{friend.mobile}</div>
         <div className="col-3">{friend.mail}</div>
+        <div className="col-2 text-center">{friend.group}</div>
         <div className="col-2 text-center">
             <button className="btn btn-sm btn-secondary me-1" type="button"
                 onClick={event => setEditable(friend.id)}>EDIT</button>

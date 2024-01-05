@@ -5,6 +5,7 @@ const FriendsListHeader = () => (
         <div className="col">Full Name</div>
         <div className="col-2">Mobile Number</div>
         <div className="col-3">Mail Id</div>
+        <div className="col-2">Group</div>
         <div className="col-2">Action</div>
     </div>
 );

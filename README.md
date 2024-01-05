@@ -245,3 +245,52 @@ ReactJS
                 unit    (ltr/kg/gra/packet) (Use Drop down to select the unit)
 
             Perform CRUD operation on thsi entity using a SPA.
+
+    React.Component Life Cycle
+
+        constructor()       //state initialization
+            |
+            ↓
+            render()        //generate the html DOM for the first time
+                |
+                ↓
+            componentDidMount() //to execute any tiem consuming task immidiatly after the first render, 
+                               //use setState()) to update the state..
+                                        |
+                                        ↓
+                                    |-→ render() //generate the html DOM with te updated data in the state
+                                    |    |
+                                    |    ↓
+                                    |    componentDidUpdate()   //used to compute side effects.
+                                    |                           //use setState() if needed to update data
+                                    |                                   |
+                                    |-----------------------------------|   
+                 
+    React Hooks
+
+        Hooks are special method created to provide enhanced features to a Function Component.
+
+        We have a very large variety of hooks that makes a Fucntion Component far more powerful than a class component.
+
+        Hooks are to be executed on the top-most lines of the Function Component, before calling any other method.
+
+    useState Hook
+
+        [reader,writer] = useState(initalValue);
+
+            the reader can be used to get the current value of a field
+            the writer can be used to update the value of the field and render happens automatically each time
+            the writer is called.
+
+            [x,setX] = useState(0);
+
+    useEffect Hook
+
+        useEffect( () => { } )              will invoke the callback once for every render.
+
+        useEffect( () => { } , [] )         will invoke the callback only once after first render.
+                                            equivalent to componentDidMount
+
+        useEffect( () => { } , [field])     will invoke the callback once for every change in the field after render.
+                                            equivalent to componentDidUpdate
+    

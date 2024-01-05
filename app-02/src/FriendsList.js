@@ -8,11 +8,11 @@ class FriendsList extends Component {
         super();
         this.state = {
             friends: [
-                { id: 101, fullName: "Vamsy Kiran", mobile: "9052224753", mail: "a.vamc.it@gmail.com" },
-                { id: 102, fullName: "Sagar Guru Charan", mobile: "9052224703", mail: "sagar@gmail.com" },
-                { id: 103, fullName: "Suseela", mobile: "9052024753", mail: "suseelarani@gmail.com" },
-                { id: 104, fullName: "Sarada Gowri", mobile: "9051224753", mail: "sarada@gmail.com" },
-                { id: 105, fullName: "Indhikaa Valli", mobile: "9052824753", mail: "indu@gmail.com" }
+                { id: 101, fullName: "Vamsy Kiran", mobile: "9052224753", mail: "a.vamc.it@gmail.com",group:"FAMILY" },
+                { id: 102, fullName: "Sagar Guru Charan", mobile: "9052224703", mail: "sagar@gmail.com",group:"WORK" },
+                { id: 103, fullName: "Suseela", mobile: "9052024753", mail: "suseelarani@gmail.com",group:"FAMILY" },
+                { id: 104, fullName: "Sarada Gowri", mobile: "9051224753", mail: "sarada@gmail.com",group:"WORK" },
+                { id: 105, fullName: "Indhikaa Valli", mobile: "9052824753", mail: "indu@gmail.com",group:"FAMILY" }
             ],
             nextId: 106
         };

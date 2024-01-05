@@ -1,5 +1,7 @@
 import { Component } from 'react';
 
+const groups = ["FAMILY","WORK","OTHERS"];
+
 class FriendListFormItem extends Component {
     constructor(props) {
         super(props);
@@ -10,7 +12,8 @@ class FriendListFormItem extends Component {
         id:null,
         fullName:'',
         mobile:'',
-        mail:''
+        mail:'',
+        group:''
     });
 
     formSubmitted = event => {
@@ -27,7 +30,7 @@ class FriendListFormItem extends Component {
 
     render() {
 
-        let {id,fullName,mobile,mail} = this.state;
+        let {id,fullName,mobile,mail,group} = this.state;
 
         return (
             <form className="row border-bottom border-primary p-2" onSubmit={this.formSubmitted} >
@@ -43,6 +46,13 @@ class FriendListFormItem extends Component {
                 <div className="col-3">
                     <input type="text" className='form-control' value={mail}
                     onChange={ event => this.setState({mail:event.target.value}) }/>
+                </div>
+                <div className="col-2">
+                    <select className='form-control' value={group} 
+                    onChange={ event => this.setState({group:event.target.value}) }>
+                        <option value="">--SELECT--</option>
+                        { groups.map( g => <option value={g}>{g}</option>) }
+                    </select>
                 </div>
                 <div className="col-2 text-center">
                     <button className="btn btn-sm btn-secondary me-1" type="submit">SAVE</button>
