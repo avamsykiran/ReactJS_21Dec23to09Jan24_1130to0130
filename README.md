@@ -294,3 +294,75 @@ ReactJS
         useEffect( () => { } , [field])     will invoke the callback once for every change in the field after render.
                                             equivalent to componentDidUpdate
     
+    Central State Management using Redux
+    
+        npm i redux react-redex --save
+
+        redux   
+                store           is where all the data is centrally maintained
+                                ideally one app will have only one store.
+
+                                const myStore = createStore(myReducer);
+
+                reducer         is a user defined method that accepts the old state and an action
+                                and will modify the oldState as guided by the action and returns
+                                the modifiedState.
+
+                action          is an object that has two properties, actionType and payload.
+                                actionType decideds the operation on the data
+                                payLoad is the inout needed for the operation.
+
+                                for example:
+                                    let addEmpAction = {type:ADD_EMP, empObj }
+                                    let delEmpAction = {type:DEL_EMP, empId }
+
+                dispatch        is a redux provided method that is used by the component
+                                to reducer to perform an action 
+
+        react-redux
+
+                <Provider> </Provider>
+                        used to integrate the store with the top-level component of our SPA.
+
+                        <Provider store={myStore}>
+                            <App />
+                        </Provider>
+
+                useDispatch()
+                    returns the 'dispatch' method linked to the store of the current SPA.
+
+                useSelector()
+                    accepts a stateExtractionMethod.
+                    this stateExtractionMethod is executed everytime when the data in the store is modified.
+
+                    this stateExtractionMethod is supplied with all the stte in the store, we need
+                    to extract only the required part of it.
+
+                    const EmpsList = () => {
+                        let emps = useSelector(state => state.emps );
+
+                        return (
+                            <div>
+                            </div>
+                        );
+                    }                    
+                    
+                    const DeptsList = () => {
+                        let depts = useSelector(state => state.depts );
+
+                        return (
+                            <div>
+                            </div>
+                        );
+                    }
+
+                    const Dashboard = () => {
+                        let [deptCount,empCount,projectCount] = useSelector(
+                            state => [state.depts.length,state.emps.length,state.projects.length]
+                        );
+
+                        return (
+                            <div>
+                            </div>
+                        );
+                    }
