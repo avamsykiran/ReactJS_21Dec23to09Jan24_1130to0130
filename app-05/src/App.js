@@ -1,6 +1,6 @@
 import { Fragment } from "react";
-import Banner from "./Banner";
-import FriendsList from "./FriendsList";
+import Banner from "./components/Banner";
+import FriendsList from "./components/FriendsList";
 
 const App = () => (
   <Fragment>

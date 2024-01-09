@@ -1,8 +1,12 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { createAddFriendAction, 
+        createUpdateFriendAction, 
+        createUnMarkFriendEditableAction } from '../state/friendsActions';
 
 const groups = ["FAMILY", "WORK", "OTHERS"];
 
-const FriendListFormItem = ({ friend, save, cancel }) => {
+const FriendListFormItem = ({ friend }) => {
 
     let [id, setId] = useState(friend ? friend.id : null);
     let [fullName, setFullName] = useState(friend ? friend.fullName : '');
@@ -19,13 +23,17 @@ const FriendListFormItem = ({ friend, save, cancel }) => {
         setGroup('');
     };
 
+    const dispatch = useDispatch();
+
     const formSubmitted = event => {
         event.preventDefault();
-        save({ id, fullName, mobile, mail, group });
+        let friend = { id, fullName, mobile, mail, group };
+        let action = isEditable ? createUpdateFriendAction(friend) : createAddFriendAction(friend);
+        dispatch(action);
         initData();
     };
 
-    const cancelBtnClicked = event => isEditable ? cancel(id) : initData();
+    const cancelBtnClicked = event => isEditable ? dispatch(createUnMarkFriendEditableAction(id)) : initData();
 
     return (
         <form className="row border-bottom border-primary p-2" onSubmit={formSubmitted} >

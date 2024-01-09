@@ -366,3 +366,47 @@ ReactJS
                             </div>
                         );
                     }
+            
+            store -----------------------→ state -------------→ state 
+             ↑                               |                     | 
+             |                               | useDispatch()       | useDispatch()
+             |                               ↓ useSelector()       ↓ useSelector()          
+             |                              Component1          Component2   
+             |                                  |                       |
+             | modifiedState                    |                       |
+             |                                  | disptch(action)       |
+             |                                  ↓                       ↓ disptch(action)
+            reducer ←----------------------------------------------------
+
+    Integrating Rest API Calls
+
+        (1)  json-server is a fake Rest API Server 
+
+                uses a '.json' file as data-source and produces rest-api from it.
+
+                md friends-api
+                cd friends-api
+                npm init -y
+                npm i json-server --save
+
+                create a data.json file with hypothetical data on the friends-api root.
+                edit "start" script of the package.json as "json-server --watch ./data.json --port 9090"
+
+                npm start 
+
+        (2) rest-api calls using 'axios'
+
+                npm i axios --save
+
+                axios.get(url) : Promise
+                axios.post(url,reqBody) : Promise
+                axios.put(url,reqBody) : Promise
+                axios.delete(url) : Promise 
+
+        (3) integrtion asynchronous rest-api calls (axios) with synchronous state-management (redux)
+
+                this is done using a redux middleware called redux-thunk
+
+                npm i redux-thunk --save
+
+                
