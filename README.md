@@ -409,4 +409,24 @@ ReactJS
 
                 npm i redux-thunk --save
 
+                a thunkAction is a function, and a normal action is a object.
                 
+            store -----------------------→ state -------------→ state 
+             ↑                               |                     | 
+             |                               | useDispatch()       | useDispatch()
+             |                               ↓ useSelector()       ↓ useSelector()          
+             |                              Component1          Component2   
+             |                                  |                       |
+             | modifiedState                    |                       |
+             |                                  | disptch(action)       |disptch(thunkAction)
+             |                                  |                       |
+             |                                  ↓                       ↓ 
+            reducer |←----------------(action)---              |------[thunk action ]------------|
+                    |                                          |                                 |
+                    |←----------------(waitAction)-------------|    send a wait action           |
+                    |                                          |                                 |   
+                    |                                          |    rest-api axios call is made  |
+                    |←----------------(successAction)----------|        (a) receive a success    |
+                    |←----------------(errAction)--------------|        (b) or receive an error  |
+                                                               |                                 |
+                                                               |---------------------------------|     

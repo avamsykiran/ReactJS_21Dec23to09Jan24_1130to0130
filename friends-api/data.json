@@ -1,18 +1,18 @@
 {
-    "friends": [
-        {
-            "id": 101,
-            "fullName": "Vamsy Kiran",
-            "mobile": "9052224753",
-            "mail": "a.vamc.it@gmail.com",
-            "group": "FAMILY"
-        },
-        {
-            "id": 102,
-            "fullName": "Sagar Guru Charan",
-            "mobile": "9052224703",
-            "mail": "sagar@gmail.com",
-            "group": "WORK"
-        }
-    ]
+  "friends": [
+    {
+      "id": 1,
+      "fullName": "Vamsy Kiran",
+      "mobile": "9052224753",
+      "mail": "vamsy@gmail.com",
+      "group": "FAMILY"
+    },
+    {
+      "id": 2,
+      "fullName": "Xagar Guru",
+      "mobile": "1234567890",
+      "mail": "sagar@gmail.com",
+      "group": "WORK"
+    }
+  ]
 }
