@@ -430,3 +430,27 @@ ReactJS
                     |←----------------(errAction)--------------|        (b) or receive an error  |
                                                                |                                 |
                                                                |---------------------------------|     
+
+
+    Routing In ReactJS
+    
+        npm i react-router react-router-dom --save
+
+            <BrowserRouter>
+
+                <Header />
+
+                <Routes>
+                    <Route path="/"  exact element={<C1 />} />
+                    <Route path="/a" element={<C2 />} />
+                    <Route path="/b" element={<C3 />} />
+                    <Route path="/c/:pathVariable" element={<C4 />} />
+                </Routes>
+
+                <Footer />
+
+            </BrowserRouter>
+
+            <Link to"" ></Link>       instead of <a></a>
+
+            <Navigate to="" />          
